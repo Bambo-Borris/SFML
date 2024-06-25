@@ -362,10 +362,9 @@ JoystickState JoystickImpl::update()
         {
             return updateDInputBuffered();
         }
-        else
-        {
-            return updateDInputPolled();
-        }
+        
+                    return updateDInputPolled();
+       
     }
 
     JoystickState state;
@@ -1147,7 +1146,7 @@ BOOL CALLBACK JoystickImpl::deviceObjectEnumerationCallback(const DIDEVICEOBJECT
 
         return DIENUM_CONTINUE;
     }
-    else if (DIDFT_GETTYPE(deviceObjectInstance->dwType) & DIDFT_POV)
+    if (DIDFT_GETTYPE(deviceObjectInstance->dwType) & DIDFT_POV)
     {
         // POVs
         if (deviceObjectInstance->guidType == guids::GUID_POV)
@@ -1161,7 +1160,7 @@ BOOL CALLBACK JoystickImpl::deviceObjectEnumerationCallback(const DIDEVICEOBJECT
 
         return DIENUM_CONTINUE;
     }
-    else if (DIDFT_GETTYPE(deviceObjectInstance->dwType) & DIDFT_BUTTON)
+    if (DIDFT_GETTYPE(deviceObjectInstance->dwType) & DIDFT_BUTTON)
     {
         // Buttons
         for (unsigned int i = 0; i < Joystick::ButtonCount; ++i)

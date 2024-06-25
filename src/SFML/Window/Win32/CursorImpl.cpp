@@ -117,11 +117,10 @@ bool CursorImpl::loadFromPixels(const std::uint8_t* pixels, Vector2u size, Vecto
     {
         return true;
     }
-    else
-    {
-        err() << "Failed to create cursor from bitmaps" << std::endl;
+    
+            err() << "Failed to create cursor from bitmaps" << std::endl;
         return false;
-    }
+   
 }
 
 
@@ -167,11 +166,10 @@ bool CursorImpl::loadFromSystem(Cursor::Type type)
     {
         return true;
     }
-    else
-    {
-        err() << "Could not create copy of a system cursor" << std::endl;
+    
+            err() << "Could not create copy of a system cursor" << std::endl;
         return false;
-    }
+   
 }
 
 

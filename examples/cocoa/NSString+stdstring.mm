@@ -58,8 +58,7 @@
 
     if (cstr != nullptr)
         return std::string(cstr);
-    else
-        return "";
+    return "";
 }
 
 - (std::wstring)tostdwstring
